@@ -1,0 +1,7 @@
+pandas>=2.2
+numpy>=2.0
+matplotlib>=3.8
+scikit-learn>=1.4
+xarray>=2024.1
+netCDF4>=1.6
+tqdm>=4.66
