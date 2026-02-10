@@ -1,44 +1,27 @@
-# ARGOX + SEIR–EAKF Influenza Modeling Pipeline  
-*End-to-end ARGO-based influenza nowcasting integrated with a humidity-forced SEIR model and Ensemble Adjustment Kalman Filter (EAKF).*
+# argo_seir-eakf-modeling
 
----
+This repository contains an end-to-end Jupyter notebook for reproducing the analysis outputs written to `./outputs4/`.
 
-## 🔍 Overview
+**Primary notebook to run:**
+- `ARGOX_E2E_FINAL v2.ipynb`  (recommended / most up-to-date)
+- `ARGOX_E2E_FINAL.ipynb`     (older)
 
-This repository contains a **fully reproducible modeling pipeline** combining:
+## What you can reproduce
+Running `ARGOX_E2E_FINAL v2.ipynb` end-to-end will generate outputs into:
 
-1. **ARGOX**  
-   - A Google Trends–augmented sparse regression framework  
-   - Weekly influenza-like illness (ILI) prediction at the state or metropolitan level  
-   - Rolling or short-window ElasticNet models with automated term selection  
+- `./outputs4/`
 
-2. **SEIR–EAKF**  
-   - A daily SEIR compartmental model forced by **absolute humidity (AH)**  
-   - State-specific humidity drivers extracted from **NECP R2 reanalysis data**  
-   - Bayesian updating using an **Ensemble Adjustment Kalman Filter**  
-   - Weekly assimilation of observed ILI, producing Rt and latent state estimates  
+## Repository layout (key items)
+- `ARGOX_E2E_FINAL v2.ipynb` — main end-to-end notebook
+- `config/state_locs.csv` — state centroid/locations config used by helper logic
+- `cache/config/state_fips_map.csv` — FIPS → state mapping used in mobility build
+- `cache/rt_state_weekly.csv` — weekly state R(t) input used in alignment/plots
+- `cache/mobility_state_weekly_total_fromSafeGraph.csv` — weekly state mobility totals (prebuilt)
 
-Together, these components create a **coherent real-time influenza surveillance model** suitable for research, manuscript analyses, and operational deployment.
+The `outputs4/` folder is **generated** and not tracked.
 
----
-
-## 📁 Repository Structure
-
-### Ignored folders (generated automatically when running the notebook)
-
-These are large and system-specific, so they are not stored in the GitHub repo.  
-**They will be created automatically when the notebook is run.**
-
----
-
-## ⚙️ Installation
-
-Clone the repository:
-
+## Setup
+### 1) Clone
 ```bash
-git clone https://github.com/bcristol93/argo_seir-eakf-modeling.git
+git clone git@github.com:bcristol93/argo_seir-eakf-modeling.git
 cd argo_seir-eakf-modeling
-
-pip install -r requirements.txt
-
-jupyter lab
