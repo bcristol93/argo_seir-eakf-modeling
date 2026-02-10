@@ -1,6 +1,7 @@
 # argo_seir-eakf-modeling
 
 This repository contains an end-to-end Jupyter notebook for reproducing the analysis outputs written to `./outputs4/`.
+Only ARGOX_E2E_FINAL v2.ipynb is required to reproduce all results.
 
 **Primary notebook to run:**
 - `ARGOX_E2E_FINAL v2.ipynb`  (recommended / most up-to-date)
@@ -19,6 +20,9 @@ Running `ARGOX_E2E_FINAL v2.ipynb` end-to-end will generate outputs into:
 - `cache/mobility_state_weekly_total_fromSafeGraph.csv` — weekly state mobility totals (prebuilt)
 
 The `outputs4/` folder is **generated** and not tracked.
+
+Users should not edit paths or configuration files; all paths are relative and resolved internally.
+A full run may take several minutes depending on hardware.
 
 ## Setup
 ### 1) Clone
